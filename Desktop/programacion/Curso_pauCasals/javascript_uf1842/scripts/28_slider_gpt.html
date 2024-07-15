@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: grey;
+        }
+
+        .container {
+            position: relative;
+            width: 600px;
+            height: 600px; /* Ajustar a la altura de la imagen */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            width: 600px;
+            border-radius: 30px;
+            box-shadow: 0 0 20px 5px #00ff00;
+            position: absolute;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        button {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+            z-index: 10; /* Asegurar que los botones estén sobre las imágenes */
+        }
+
+        .ant {
+            left: -50px;
+        }
+
+        .sig {
+            right: -50px;
+        }
+
+        #texto {
+            color: white;
+            position: absolute;
+            bottom: 10px; /* Ajustado para estar dentro del contenedor */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+
+        .show {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body onload="cargar()">
+    <div class="container">
+        <img src="./img/0.webp" class="show">
+        <p id="texto"></p>
+        <button class="sig" onclick="siguiente()">&gt;</button>
+        <button class="ant" onclick="anterior()">&lt;</button>
+    </div>
+
+    <script>
+        const imagen = document.querySelector("img");
+        const imagenes = ["./img/0.webp", "./img/1.webp", "./img/2.webp", "./img/3.webp", "./img/4.webp", "./img/5.webp", "./img/6.webp", "./img/7.webp", "./img/8.webp", "./img/9.jpg", "./img/10.webp", "./img/11.webp"];
+        const agentes = ["Jett", "Breach", "Brimstone", "Killjoy", "Omen", "Phoenix", "Raze", "Reyna", "Sage", "SovaRojo", "Sova", "Viper"];
+        const text = document.getElementById("texto");
+
+        let index = 0;
+
+        function siguiente() {
+            cambiarImagen(1);
+        }
+
+        function anterior() {
+            cambiarImagen(-1);
+        }
+
+        function cambiarImagen(direccion) {
+            const imagenActual = document.querySelector("img.show");
+            index += direccion;
+            if (index == imagenes.length) {
+                index = 0;
+            } else if (index < 0) {
+                index = imagenes.length - 1;
+            }
+
+            const nuevaImagen = document.createElement("img");
+            nuevaImagen.src = imagenes[index];
+            nuevaImagen.width = 600;
+            nuevaImagen.classList.add("hidden");
+            document.querySelector(".container").appendChild(nuevaImagen);
+
+            setTimeout(() => {
+                imagenActual.classList.remove("show");
+                imagenActual.classList.add("hidden");
+                nuevaImagen.classList.remove("hidden");
+                nuevaImagen.classList.add("show");
+
+                setTimeout(() => {
+                    document.querySelector(".container").removeChild(imagenActual);
+                }, 500);
+            }, 10);
+
+            text.innerHTML = `${agentes[index]} - ${index + 1} / ${imagenes.length}`;
+        }
+
+        function cargar() {
+            text.innerHTML = `${agentes[index]} - ${index + 1} / ${imagenes.length}`;
+        }
+    </script>
+</body>
+</html>

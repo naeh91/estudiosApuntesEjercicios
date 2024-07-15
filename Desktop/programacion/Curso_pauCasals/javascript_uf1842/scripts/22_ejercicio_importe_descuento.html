@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: space-around;
+        }
+        input{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <p>Importe:</p> <input id="importe" type="number"><br>
+    <p>descuento:</p> <input id="descuento" type="number"><br><br>
+    <button onclick="importeFinal(document.getElementById('importe').value, document.getElementById('descuento').value)">Calcular importe final</button>
+
+    Importe Final:<p2 id="resultado"></p>
+    <script>
+        function importeFinal(a,b){
+        document.getElementById("resultado").innerHTML = a - a*b/100;
+        
+    }
+    
+
+    </script>
+    
+</body>
+</html>

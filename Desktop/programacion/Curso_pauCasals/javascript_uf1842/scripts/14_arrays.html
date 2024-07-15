@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays-Matrices</title>
+</head>
+<body>
+    array alumnos
+    <p id="mensaje"></p>
+    array numeros
+    <p id="mensaje2"></p>
+    array bidimensional
+    <p id="mensaje3"></p>
+    <script>
+        //nombre array[numeroIndice]
+        const alumnos = ["Eva","Toni","Dani","Jonathan"];
+        // document.getElementById("mensaje").innerHTML = alumnos[2]; //nos da el indice 2 que es toni.
+        document.getElementById("mensaje").innerHTML = alumnos.toString(); //nos dice todos los elementos del array
+        // document.getElementById("mensaje").innerHTML = alumnos.length; //tamaño del array.
+        // document.getElementById("mensaje").innerHTML = alumnos.sort();  //para ordenar alfabeticamente.
+        // document.getElementById("mensaje").innerHTML = alumnos.reverse(); //muestra la inversa alfabeticamente, pero con el sort activo.
+        // document.getElementById("mensaje").innerHTML = alumnos.push("Raul"); //añade por detras.
+        // document.getElementById("mensaje").innerHTML = alumnos.pop(); //lo quita por detras
+        // document.getElementById("mensaje").innerHTML = alumnos.unshift("Perico"); //añade por delante
+        // document.getElementById("mensaje").innerHTML = alumnos.shift();
+        // document.getElementById("mensaje").innerHTML = alumnos.join("|") //poner un separador entre los elementos del array.
+        const num = [45,6,12,100];
+        // document.getElementById("mensaje2").innerHTML = num[1];
+        // document.getElementById("mensaje2").innerHTML = num.sort(function(a,b){return a-b})//ordena ascendente
+        // document.getElementById("mensaje2").innerHTML = num.sort(function(a,b){return b-a}) //ordena descendentmente.
+        const notaAlumnos = [["Toni",9],["Raul",10]];
+        document.getElementById("mensaje3").innerHTML = notaAlumnos[1][1]; //aqui me da la nota 10 de Raul.
+        document.getElementById("mensaje3").innerHTML = notaAlumnos[1][0]; //aqui decimos q nos de el valor Raul.
+        document.getElementById("mensaje3").innerHTML = notaAlumnos[1][1] + notaAlumnos[1][0]; //aqui le damos los dos valores de raul y la nota 
+
+
+
+    </script>
+    
+</body>
+</html>

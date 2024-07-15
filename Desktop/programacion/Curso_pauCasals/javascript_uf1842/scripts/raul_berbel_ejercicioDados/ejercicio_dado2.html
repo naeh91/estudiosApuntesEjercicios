@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juego de Apuestas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: burlywood;   
+            
+              
+
+        }
+        img{
+           margin-top: 100px;
+           margin-left: 120px;
+           width: 150px;
+         }
+        .container{
+            margin-top: 50px;
+            border: 2px solid black;
+            width: 400px;
+            height: 600px;
+            align-items: center;
+            margin-left: 700px;
+            box-shadow: 5px 5px ;
+            
+        }
+
+
+        h2{
+            margin-left: 100px;
+            font-family: "ga maamli",sans-serif;
+        }
+
+        label, input {
+            display: block;
+            width: 200px;
+            padding: 8px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            margin-left: 100px;
+            box-sizing: border-box;
+            box-shadow: 5px 5px 5px 5px blue;
+            border-radius: 25px;
+            
+        }
+
+        label {
+            margin-bottom: 20px;         
+            text-align: center;
+
+        }
+
+        button {
+            
+            padding: 8px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 160px;
+            align-items: center;
+        }
+        button:hover{
+            background-color: red;
+         
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h2>Juego de Apuestas</h2>
+    <label for="numero"><strong>un número del 1 al 6:</strong></label>
+    <input id="numero" type="number" min="1" max="6" placeholder="Ingrese un numero"><br><br>
+    
+    <label for="cantidad"><strong>Cantidad a apostar:</strong></label>
+    <input id="cantidad" type="number" min="1" placeholder="Ingrese la cantidad(€)"><br><br>
+    
+    <label for="saldo"><strong>Saldo:</strong></label>
+    <input id="saldo" type="text" value="1000" readonly><br><br>
+    
+    <button onclick="apostar()">Apostar</button>
+    
+    <p id="mensaje"></p>
+    <img id="imagen-resultado" src="" alt=>
+     </div>
+
+    <script>
+        // Crea el array con las rutas de las imágenes
+        const imagenes = [
+            'img/dado1.jpg',
+            'img/dado2.jpg',
+            'img/dado3.jpg',
+            'img/dado4.jpg',
+            'img/dado5.jpg',
+            'img/dado6.jpg'
+        ];
+
+        // Función para apostar y capturamos los inputs la p donde pondremos el texto y donde la img (hueco donde pondremos la img)
+
+        function apostar() {
+            const numero = parseInt(document.getElementById("numero").value);
+            const cantidad = parseInt(document.getElementById("cantidad").value);
+            let saldo = parseInt(document.getElementById("saldo").value);
+            const mensaje = document.getElementById("mensaje");
+            const imagenResultado = document.getElementById("imagen-resultado");
+            // Generar número aleatorio del 1 al 6
+            const numeroAleatorio = Math.floor(Math.random() * 6) + 1;
+            // Mostrar la imagen correspondiente al número aleatorio
+            imagenResultado.src = imagenes[numeroAleatorio - 1];
+
+            // Comparar y actualizar saldo
+            if (numero === numeroAleatorio) {
+                saldo += cantidad; alert("¡Felicidades! Has acertado. El número era " + numeroAleatorio + ". Ganaste " + cantidad + "."); // Ganar saldo          
+                // mensaje.innerHTML = "¡Felicidades! Has acertado. El número era " + numeroAleatorio + "Ganaste " + cantidad ;
+            } else {
+                saldo -= cantidad;  // Perder saldo              
+                // mensaje.innerHTML = "Lo siento, no acertaste. El número era " + numeroAleatorio + " Perdiste " + cantidad;
+                alert("Lo siento, no acertaste. El número era " + numeroAleatorio + ". Perdiste " + cantidad + ".");
+            }
+
+            // Actualizar el saldo en el input
+            document.getElementById("saldo").value = saldo;
+        } 
+    </script>
+</body>
+</html>

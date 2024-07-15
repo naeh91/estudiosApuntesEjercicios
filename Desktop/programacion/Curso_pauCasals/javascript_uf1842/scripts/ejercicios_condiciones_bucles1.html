@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación de Premios de Empleados</title>
+</head>
+<body>
+    <h1>Evaluación de Premios de Empleados</h1>
+    <form id="formulario">
+        <label for="nombre">Nombre del Empleado:</label><br>
+        <input type="text" id="nombre" name="nombre"><br><br>
+
+        <label for="viajes">Cantidad de Viajes Vendidos:</label><br>
+        <input type="number" id="viajes" name="viajes"><br><br>
+
+        <label for="incentivos">Importe de los Incentivos (€):</label><br>
+
+        <input type="number" id="incentivos" name="incentivos"><br><br>
+
+        <button type="button" onclick="evaluarPremio()">Evaluar</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function evaluarPremio() {
+            // Obtener los valores del formulario
+            let nombre = document.getElementById("nombre").value;
+            let viajes = parseInt(document.getElementById("viajes").value);
+            let incentivos = parseFloat(document.getElementById("incentivos").value);
+
+            // Verificar si los viajes vendidos son mayores a 100 y los incentivos son mayores a 1000€
+            if (viajes >= 100 && incentivos >= 1000) {
+                document.getElementById("resultado").innerText = nombre + " Obtiene el viaje de premio.";
+            } else {
+                document.getElementById("resultado").innerText = nombre + " Se va a la verga.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+    
+</body>
+</html>

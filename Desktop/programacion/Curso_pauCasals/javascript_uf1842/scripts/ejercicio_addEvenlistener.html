@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #b{
+            width: 300px;
+            height: 200px;
+            background-color: red;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="b">
+
+    </div>
+    <p id="mensaje"></p>
+    <button id="btn">STOP</button>
+
+    <script>
+        let b = document.getElementById("b");
+        let m = document.getElementById('mensaje');
+
+        b.addEventListener("mousemove",functionClick);
+
+        function functionClick(){
+            m.innerHTML = Math.random()
+        }
+        
+        let boton = document.getElementById("btn");
+        boton.addEventListener("click",functionQuitar);
+        function functionQuitar(){
+            b.removeEventListener("mousemove",functionClick);
+
+        }
+
+        
+    </script>
+    
+</body>
+</html>

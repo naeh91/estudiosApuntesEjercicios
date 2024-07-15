@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h3>Contar con expresiones regulares</h3>
+    <p id="mensaje"></p>
+    <script>
+        let texto = "Tres tristes tigres, comen trigo en un trigal.";
+        document.getElementById("mensaje").innerHTML = texto + " tiene: " + contar() + " letras T";
+        function contar(){
+            // return texto.replace(/\S/gi,"").length;
+            // return texto.match(/t/gi).length;
+            return texto.match(/[aeiouAEIOU\u00C0-\u017F]/gi).length;
+        }
+    </script>
+
+</body>
+</html>

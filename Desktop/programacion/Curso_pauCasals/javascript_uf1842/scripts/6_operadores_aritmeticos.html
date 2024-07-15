@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operadores aritmeticos</title>
+    <style>
+        #resultado{
+            width: 200px;
+            height: 100px;
+            border: solid 2px red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Operadores aritméticos</h2>
+    valor 1: <input id="v1" type="text"><br><br>
+    valor 2: <input id="v2" type="text"><br><br>
+    <div id="resultado"></div>
+    <button onclick="sumar()">+</button>
+    <button onclick="restar()">-</button>
+    <button onclick="multiplica()">X</button>
+    <button onclick="divide()">÷</button>
+    <button onclick="resto()">%</button>
+
+<script>
+    function sumar(){
+        var valor1 = parseInt(document.getElementById("v1").value);
+        var valor2 = parseInt(document.getElementById("v2").value);
+        var calculo = valor1 + valor2;
+        document.getElementById("resultado").innerHTML = calculo;
+    }
+    function restar(){
+        var valor1 = parseInt(document.getElementById("v1").value);
+        var valor2 = parseInt(document.getElementById("v2").value);
+        var calculo = valor1 - valor2;
+        document.getElementById("resultado").innerHTML = calculo;
+    }
+    function multiplica(){
+        var valor1 = parseInt(document.getElementById("v1").value);
+        var valor2 = parseInt(document.getElementById("v2").value);
+        var calculo = valor1 * valor2;
+        document.getElementById("resultado").innerHTML = calculo;
+    }
+    function divide(){
+        var valor1 = parseInt(document.getElementById("v1").value);
+        var valor2 = parseInt(document.getElementById("v2").value);
+        var calculo = valor1 / valor2;
+        document.getElementById("resultado").innerHTML = calculo;
+    }
+    function resto(){
+        var valor1 = parseInt(document.getElementById("v1").value);
+        var valor2 = parseInt(document.getElementById("v2").value);
+        var calculo = valor1 % valor2;
+        document.getElementById("resultado").innerHTML = calculo;
+    }
+</script>
+</body>
+</html>

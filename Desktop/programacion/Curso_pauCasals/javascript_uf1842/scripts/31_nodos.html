@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .colorin{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h3>Añadir parrafor</h3>
+    <button onclick="añadir()" >Añadir</button>
+    <button onclick="eliminar()" >Eliminar</button>
+    <button onclick="colorRojo()" >Color Rojo</button>
+    
+    <button onclick="alinear('i')" >Alinear izquierda</button>
+    <button onclick="alinear('c')" >Alinear centro</button>
+    <button onclick="alinear('d')" >Alinear derecha</button>
+
+    <div id="contenido" ></div>
+
+
+
+
+    <script>
+
+function alinear(on){
+
+    const lista = document.getElementById("contenido");
+
+switch (on) {
+    
+    case 'i':
+        lista.setAttribute("align", "left");
+        break;
+
+    case 'c':
+         lista.setAttribute("align", "center");
+        break;
+    
+    case 'd':
+         lista.setAttribute("align", "right");
+        break;
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function añadir(){
+            let par = document.createElement("p");
+            par.innerHTML = "Hola";                    
+            document.getElementById("contenido").appendChild(par);
+        }
+        function eliminar(){
+            const lista = document.getElementById("contenido");
+            lista.removeChild(lista.lastElementChild);
+        }
+        function colorRojo(){
+            document.getElementById("contenido").setAttribute("class", "colorin");
+        }
+    </script>
+</body>
+</html>

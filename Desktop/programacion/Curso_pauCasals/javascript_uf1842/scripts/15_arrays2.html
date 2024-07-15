@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorrer un array</title>
+</head>
+<body>
+    <p id="mensaje"></p>
+    <script>
+        const personas = ["Luis","Pedro","Marisa","Bernat","Sonia","Martin"];
+        let texto = "";
+        for(let i = 0;i<personas.length;i++){
+            texto += personas[i] + "<br>";
+           
+        }
+        document.getElementById("mensaje").innerHTML = texto;
+    </script>
+    
+</body>
+</html>

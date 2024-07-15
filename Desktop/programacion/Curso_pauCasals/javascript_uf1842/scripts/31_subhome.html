@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Introducción</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        .container{
+            border: black solid 2px;
+            width: 600px;
+            height: 500px;
+            margin-left: 600px;
+            margin-top: 200px;
+            box-shadow:black 5px 5px 5PX 5px;
+            background-color: red;
+            color: white;
+            /* text-align: center; */
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+
+        
+        }
+        button{
+            margin: 5px;
+        }
+            
+
+            
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="mensaje"></p>
+        <button onclick="Introducir()">Púlsame</button>
+        <button onclick="Mostrar()">Mostrar Todo</button>
+    </div>
+
+    <script>
+        const nombres = [];
+        const marcas = [];
+
+        function Introducir(){
+            let nombre = prompt("Introduzca el nombre");
+            let marca = prompt("Introduzca la marca");
+
+            // Agregar el nombre y la marca a los arrays
+            nombres.push(nombre);
+            marcas.push(parseFloat(marca));    // Convertir marcas a números
+        }
+
+        function Mostrar() {
+            // Ordenar los arrays directamente
+            nombres.sort();
+            marcas.sort((a, b) => a - b); // Ordenar números de menor a mayor
+
+            // Mostrar los arrays ordenados en el elemento con id "mensaje"
+
+
+            document.getElementById("mensaje").innerHTML = 
+                "Nombres: " + nombres + "<br>Marcas: " + marcas;
+        }
+    </script>
+</body>
+</html>
+

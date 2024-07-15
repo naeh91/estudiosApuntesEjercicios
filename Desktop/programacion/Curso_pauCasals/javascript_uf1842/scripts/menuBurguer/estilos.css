@@ -1,0 +1,90 @@
+
+body{
+    background-color: grey;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Dancing Script"
+}
+
+#contenedor {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que el contenido se distribuya bien */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    
+    font-size: 30px;
+}
+
+#menu {
+    position: relative;
+    background-color: #333333;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px;
+}
+
+#vinculos {
+    display: none;
+}
+
+#titulo {
+    display: block;
+    background-color: #cc0000;
+    text-align: center;
+}
+
+#menu a {
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+#vinculos a:hover {
+    background-color: #999999;
+}
+
+#icono {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: black;
+}
+
+#principal {
+    flex: 1;
+    margin-top: 10px;
+    font-family: "Poppins";
+    font-size: 20px;
+    margin: 30px;
+    
+}
+
+#imagenes {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre las imágenes */
+    margin-bottom: 30px; /* Margen inferior para separar del borde de la pantalla */
+}
+
+#imagenes img {
+    width: 300px;
+    height: auto;
+}
+#honra{
+    margin: auto;
+    margin-top: 30px;
+}
+#gom{
+    margin: auto;
+    margin-top: 30px;
+}
+#gangs{
+    margin: auto;
+    margin-top: 30px;
+}

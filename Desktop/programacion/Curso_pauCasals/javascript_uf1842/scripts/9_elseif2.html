@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nota = 4;
+        calificacion = "";
+        if(nota >=0 && nota <5){
+            calificacion = "Suspendido";
+        }else if(nota >=5 && nota <=10){
+            calificacion = "Aprobado";
+        }else{
+            calificacion = "Nota incorrecta";
+        }
+        document.write("El alumno ha sacado un " + nota + "su calificación es " + calificacion);
+    </script>
+    
+</body>
+</html>

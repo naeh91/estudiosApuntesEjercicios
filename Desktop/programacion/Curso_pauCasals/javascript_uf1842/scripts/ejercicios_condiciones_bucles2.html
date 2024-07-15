@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Evaluación de Premios de Empleados</h1>
+    <form id="formulario">
+        <label for="nombre">Nombre del Empleado:</label><br>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del empleado"><br><br>
+        
+
+        <label for="turno">Turno:</label><br>
+        <input type="text" id="turno" name="turno" placeholder="Ingrese el turno"><br><br>
+
+        <label for="categoria">Categoria:</label><br>
+        <input type="text" id="categoria" name="text" placeholder="Ingrese la categoria"><br><br>
+
+        <label for="sueldo">Sueldo:</label><br>
+        <input type="number" id="sueldo" name="sueldo" placeholder="Ingrese el sueldo"><br><br>
+
+        <button type="button" onclick="promover()">Evaluar</button>
+    </form>
+
+    <p id="resultado"></p>
+    <script>
+        function promover(){
+            let turno = document.getElementById("turno").value;
+            let nombre = document.getElementById("nombre").value;
+            let categoria = document.getElementById("categoria").value;
+            let sueldo = parseInt(document.getElementById("sueldo").value);
+    
+            if(turno == "m" || categoria == "1" && sueldo < 1500){
+                document.getElementById("resultado").innerHTML = nombre + " sí que promueve y gana " + sueldo + " Euros";
+            }else{
+                document.getElementById("resultado").innerHTML = nombre + " no promueve";
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>

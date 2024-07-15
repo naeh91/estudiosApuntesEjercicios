@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function saludar(){
+            // alert("Hola Tontito");
+            document.getElementById("mensaje").innerHTML = "Hola tontito!!!";
+            document.getElementById("capita").style.backgroundColor = "blue";
+
+        }
+    </script>
+    <style>
+        #capita{
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+        }
+        
+    </style>
+</head>
+<body>
+    <button onclick="saludar()">Saludos</button><br>
+    <p id="mensaje"></p>
+    <div id="capita">capita</div>
+</body>
+</html>

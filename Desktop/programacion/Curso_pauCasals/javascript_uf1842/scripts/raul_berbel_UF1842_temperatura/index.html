@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura fahrenheit</title>
+    <!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #f0f8ff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #temperature-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #temperature-form label, #temperature-form input, #temperature-form button {
+            margin: 10px;
+        }
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+        img {
+            max-width: 100px;
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+        .container{
+            border: solid black 2px;
+            width: 400px;
+            height: 600px;
+            background-color: rgb(0, 255, 234);
+            box-shadow: 5px 5px 5px black;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Temperatura</h1>
+        <form id="temperature-form" onsubmit="return convertTemperature()">
+            <label for="temperature">Introduce una temperatura (entre -30 y 60 °C):</label>
+            <input type="text" id="temperature" name="temperature" required>
+            <button type="submit">Convertir</button>
+        </form>
+        <div id="result"></div>
+        <div id="error-message" class="error"></div>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            const temperatureInput = document.getElementById('temperature');
+            const temperatureCelsius = parseInt(temperatureInput.value);
+            const errorMensaje = document.getElementById('error-message');
+            const resultado = document.getElementById('result');
+            let text = '';
+            let imageUrl = '';
+
+            errorMensaje.textContent = ''; // Clear any previous error message
+            resultado.innerHTML = ''; // Clear previous results
+
+            try {
+                if (isNaN(temperatureCelsius)) {
+                    throw new Error('Introdueix un valor numèric.');
+                }
+                if (temperatureCelsius < -30 || temperatureCelsius > 60) {
+                    throw new Error('Introdueix un valor vàlid entre -30 i 60.');
+                }
+
+                if (temperatureCelsius >= -30 && temperatureCelsius <= -1) {
+                    text = 'Molt Baixa';
+                    imageUrl = 'https://via.placeholder.com/100?text=Molt+Baixa';  // Canvia a la ruta de la imatge corresponent
+                } else if (temperatureCelsius >= 0 && temperatureCelsius <= 12) {
+                    text = 'Baixa';
+                    imageUrl = 'https://via.placeholder.com/100?text=Baixa';  // Canvia a la ruta de la imatge corresponent
+                } else if (temperatureCelsius >= 13 && temperatureCelsius <= 25) {
+                    text = 'Tèbia';
+                    imageUrl = 'https://via.placeholder.com/100?text=Tèbia';  // Canvia a la ruta de la imatge corresponent
+                } else if (temperatureCelsius >= 26 && temperatureCelsius <= 40) {
+                    text = 'Alta';
+                    imageUrl = 'https://via.placeholder.com/100?text=Alta';  // Canvia a la ruta de la imatge corresponent
+                } else if (temperatureCelsius >= 41 && temperatureCelsius <= 60) {
+                    text = 'Molt Alta';
+                    imageUrl = 'https://via.placeholder.com/100?text=Molt+Alta';  // Canvia a la ruta de la imatge corresponent
+                }
+
+                const temperatureFahrenheit = (temperatureCelsius * 9/5) + 32;
+                resultado.innerHTML = `
+                    <p>Text: ${text}</p>
+                    <p>Temperatura en Fahrenheit: ${temperatureFahrenheit.toFixed(2)} °F</p>
+                    <img src="${imageUrl}" alt="${text}">
+                `;
+            } catch (error) {
+                errorMensaje.textContent = error.message;
+            } finally {
+                temperatureInput.value = ''; // borra el campo de entrada
+            }
+            
+            return false;
+        }
+    </script>
+</body>
+</html>

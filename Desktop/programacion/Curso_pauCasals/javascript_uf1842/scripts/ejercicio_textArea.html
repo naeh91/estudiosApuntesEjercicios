@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        .container{
+            border: 2px solid black;
+            width: 350px;
+            height: 450px;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;           
+            background-color: red;
+            transform: translate(-50%, -50%);
+            box-shadow: 5px 5px 5px black;
+            
+        }
+        #texto{
+            margin-left: 80px;
+        }
+        h3{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h3>Contar con expresiones regulares</h3>
+    <textarea rows="10" id="texto" onkeyup="contar()" placeholder="150c" maxlength="150"></textarea>
+    <h3>Numero de caracteres;</h3><p id="numeroCaracteres"></p>
+    <h3>Numero de palabras</h3><p id="numeroPalabras"></p>
+    </div>
+    <script>
+         let numeroCaracteres = document.getElementById("numeroCaracteres");
+         let numeroPalabras = document.getElementById("numeroPalabras");
+        function contar(){
+        let texto = document.getElementById("texto").value;
+       
+        numeroCaracteres.innerHTML = texto.match(/[a-z]/gi).length;
+        numeroPalabras.innerHTML = texto.match(/\b\w+\b/gi).length;
+
+        
+        
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Buscar y reemplazar con expresiones regulares</h3>
+    <p id="original">Entorno cliente</p>
+    <button onclick="cambiarTexto()">Cambiar</button>
+    <p id="nuevoTexto"></p>
+    <script>
+        let original = document.getElementById("original");
+        let nuevo = document.getElementById("nuevoTexto");
+        function cambiarTexto(){
+            let texto = original.innerHTML;
+             let patron = /cliente/gi; //la g es para q busque en global y la i es para q busque la mayuscula o la minuscula, no importa
+            nuevo.innerHTML = texto.replace(patron,"servidor");
+        }
+    </script>
+</body>
+</html>

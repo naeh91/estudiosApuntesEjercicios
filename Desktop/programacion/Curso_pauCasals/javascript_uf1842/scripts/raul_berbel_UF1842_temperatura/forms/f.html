@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    El diablo manin!!!
+    <script>
+        const valores = window.location.search;
+        const urlParams = new URLSearchParams(valores);
+        let nombre = urlParams.get("fnombre");
+        let email = urlParams.get("femail");
+        alert(nombre + " " + email);
+    </script>
+</body>
+</html>

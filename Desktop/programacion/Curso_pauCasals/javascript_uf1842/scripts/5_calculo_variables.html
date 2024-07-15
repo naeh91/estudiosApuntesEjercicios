@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo con Variables</title>
+    <style>
+        #mensaje{
+            width: 200px;
+            height: 80px;
+            border: 2px solid greenyellow;
+        }
+
+    </style>
+    
+</head>
+<body>
+    Importe con IVA: <div id="mensaje"></div>
+    <script>
+        var importe = prompt("Introduzca el importe");
+        var importeFinal = importe * 1.21;
+        document.getElementById("mensaje").innerHTML = "el importe final es:" +importeFinal;
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="b">Dale</button>
+    <p id="mensaje"></p>    
+    <script>
+
+        // declaramos variables
+        let b = document.getElementById("b");
+        let m = document.getElementById('mensaje');
+
+        // añadimos evento al button con id b
+
+        b.addEventListener("click",functionPrimera);
+        b.addEventListener("click",functionSegunda);
+
+        // creamos las funciones
+
+        function functionPrimera(){
+            m.innerHTML += "Hola <br>";
+        }
+        function functionSegunda(){
+            m.innerHTML += "Adios <br>";
+        }
+
+
+        
+    </script>
+    
+</body>
+</html>

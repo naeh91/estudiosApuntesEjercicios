@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Introduzca una nota entre 0 y 10: <input id="entrada" type="text">
+    <button onclick="comprobar()">Dale</button>
+    <p id="mensaje"></p>
+<script>
+    function comprobar(){
+        let nota = document.getElementById("entrada").value;
+        document.getElementById("mensaje").innerHTML = "";
+        try {
+            if (nota.trim() === "") throw "El campo está vacío";
+            if (isNaN(nota)) throw "No es un número";
+            nota = Number(nota); // Convertir la entrada a número
+            if (nota > 10) throw "Nota demasiado alta";
+            if (nota < 0) throw "Nota demasiado baja";
+            if (nota >= 1 && nota <= 10) throw "Nota válida";
+        } catch (error) {
+            document.getElementById("mensaje").innerHTML = error; // Capturamos la p mensaje para mostrar el error
+        } finally {
+            setTimeout(function(){
+                document.getElementById("mensaje").innerHTML = "";
+            }, 1000);
+        }
+    }
+</script>
+
+    
+</body>
+</html>

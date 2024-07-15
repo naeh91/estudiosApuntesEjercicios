@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos de un formulario</title>
+</head>
+<body>
+    <script>
+        //mediante arrays//
+        document.forms[1].elements[0].style.backgroundColor = "red";
+    </script>
+    <!-- <form action="archivo.php" method="get/post"></form>  -->
+
+    <!-- - el get pasa los datos por la url,en forma de duplas tipo nombre=valor, es transparente y poco seguro -->
+     <!-- el post envia la información mediante el protocolo http por el body -->
+      <!-- el target_"blank" para q se abra en otra ventana -->
+       <form action="f.html" method="get" name="newsletter">
+        <fieldset>
+            <legend>Apuntate a nuestro newsletter</legend>
+            <label for="nombre">Nombre y el Apellido:</label>
+            <input type="text" name="fnombre" id="nombre"><br>
+            
+            <label for="email">Email:</label>
+            <input type="text" name="femail" id="email"><br>
+            <label for="condiciones">Leer condiciones:</label>
+            <input type="checkbox" name="fcondiciones" id="condiciones"><br>
+            <input type="submit"><br>
+        </fieldset>
+
+        <br><br>
+
+       </form>
+
+       <form action="f.html" method="get" name="boletin">
+        <fieldset>
+            <legend>Apuntate a nuestro newsletter</legend>
+            <label for="nombre">Nombre y el Apellido:</label>
+            <input type="text" name="fnombre" id="nombre"><br>
+            
+            <label for="email">Email:</label>
+            <input type="text" name="femail" id="email"><br>
+            <label for="condiciones">Leer condiciones:</label>
+            <input type="checkbox" name="fcondiciones" id="condiciones"><br>
+            <input type="submit"><br>
+        </fieldset>
+
+       </form>
+       
+       <script>
+        //mediante arrays//
+        document.forms[1].elements[1].style.backgroundColor = "pink";
+        document.forms[1].elements[2].style.backgroundColor = "pink";
+        document.newsletter.fnombre.style.backgroundColor = "lightblue";
+    </script>
+
+    
+</body>
+</html>

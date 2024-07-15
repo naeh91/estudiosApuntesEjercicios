@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let hora = prompt("Que hora es");
+        // hora = parseInt(hora);
+        let hora = new Date();
+        let texto = "";
+        if(hora.getHours()<12){
+            texto = "Buenos dias " + hora;
+        }else{
+            texto = "Buenas tardes " + hora;
+        }
+        document.write(texto);
+
+    </script>
+    
+</body>
+</html>

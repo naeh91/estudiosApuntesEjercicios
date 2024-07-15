@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="25_onblur_onfocus.js"></script>
+</head>
+<body>
+    <form>
+        <label for="fnombre">Nombre:</label>
+        <input name="fnombre" type="text" id="fnombre" onblur="mayusculas('fnombre')" onfocus="iluminarFondo('fnombre')">
+        <label for="fedad">Edad:</label>
+        <input name="fedad" type="text" id="fedad" onfocus="iluminarFondo('fedad')" onblur="mayusculas('fedad')">
+    </form>
+    
+</body>
+</html>

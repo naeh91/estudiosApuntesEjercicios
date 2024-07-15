@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="b">Dale</button>
+    <p id="mensaje"></p>
+    
+    <script>
+
+        // declaramos variables
+        let b = document.getElementById("b");
+        let m = document.getElementById('mensaje');
+
+        // añadimos evento al button con id b
+
+        b.addEventListener("click",functionClick);
+        b.addEventListener("mouseover",functionMouseOver);
+        b.addEventListener("mouseout",functionMouseOut);
+
+        function functionClick(){
+            m.innerHTML += "Has pulsado click <br>";
+        }
+        function functionMouseOver(){
+            m.innerHTML += "Estás encima <br>";
+        }
+
+        function functionMouseOut(){
+            m.innerHTML += "Estás fuera <br>";
+        }
+        
+    </script>
+
+    
+</body>
+</html>

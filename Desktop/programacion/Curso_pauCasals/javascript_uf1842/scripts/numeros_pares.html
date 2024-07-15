@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Pares</title>
+</head>
+<body>
+    <h1>Ingrese un número</h1>
+    <form id="numberForm">
+        <label for="numberInput">Número:</label>
+        <input type="number" id="numberInput" name="numberInput" required>
+        <button type="submit">Mostrar Pares</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('numberForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe
+
+            // Obtiene el número ingresado por el usuario
+            
+            const number = document.getElementById('numberInput').value;
+
+            // Elemento donde se mostrarán los resultados
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = ''; // Limpiar resultados anteriores
+
+            // Bucle para encontrar y mostrar los números pares
+            for (let i = number; i >= 0; i--) {
+                if (i % 2 === 0) {
+                    resultDiv.innerHTML += i + '<br>';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
